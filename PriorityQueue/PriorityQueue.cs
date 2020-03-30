@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace PriorityQueue
 {
@@ -17,6 +15,9 @@ namespace PriorityQueue
         /// 二叉堆并不使用树状结构存储，而是使用数组，数组表示二叉堆的分层遍历结果
         /// 左孩子在数组中的下标LeftIndex = 父节点下标ParentIndex * 2 + 1
         /// 右孩子在数组中的下标RightIndex = 父节点下标ParentIndex * 2 + 2
+        /// 
+        /// 优先队列插入：将值插入完全二叉树最后一个可用的叶子处，然后将此叶子上浮
+        /// 优先队列删除：将完全二叉树最后一个叶子的值替换到被删除数字的位置，然后将这个叶子的值下沉
         /// </remarks>
         public PriorityQueue(IEnumerable<int> source)
         {
